@@ -44,7 +44,7 @@ class SpacesBuild extends StatelessWidget {
                             child: Container(
                               height: 10,
                               width: 10,
-                              color: Colors.green,
+                              color: Color(0XFF52EF7C), //Colors.green,
                             ),
                           ),
                         ),

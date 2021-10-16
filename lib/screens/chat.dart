@@ -120,7 +120,7 @@ class _ChatScreenState extends State<ChatScreen> {
                     child: Container(
                       height: media.height * 0.13,
                       width: media.width,
-                      color: Colors.blue,
+                      color: Color(0XFFFC5C62), // Colors.blue,
                       alignment: FractionalOffset.bottomLeft,
                       child: Padding(
                         padding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 7.0),
@@ -133,7 +133,7 @@ class _ChatScreenState extends State<ChatScreen> {
                               'Lase\'s Space',
                               style: TextStyle(
                                 color: Colors.white,
-                                fontSize: 25,
+                                fontSize: 23,
                                 fontWeight: FontWeight.w300,
                               ),
                             ),
@@ -142,7 +142,7 @@ class _ChatScreenState extends State<ChatScreen> {
                               'Lukaku: King\nor Not?',
                               style: TextStyle(
                                 color: Colors.white,
-                                fontSize: 42,
+                                fontSize: 40,
                                 fontWeight: FontWeight.w700,
                               ),
                             ),
@@ -178,75 +178,82 @@ class _ChatScreenState extends State<ChatScreen> {
                     ),
                   ),
 
-                  // App Bar
+                  // App Bar (Ball Gecko Logo)
                   Positioned(
                     top: 0,
                     child: Container(
                       width: media.width,
-                      child: Row(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        children: [
-                          Expanded(
-                            flex: 3,
-                            child: Container(
-                              color: Colors.black,
+                      height: media.height * 0.07,
+                      color: Color(0XFF383838), // Colors.black,
+                      child: Padding(
+                        padding: EdgeInsets.symmetric(horizontal: 12.0, vertical: 10.0),
+                        child: Row(
+                          children: [
+                            Image.asset(
+                              'assets/images/bg_logo/BGLOGO.png',
                               height: media.height * 0.07,
-                              // width: 200,
-                              child: Padding(
-                                padding: EdgeInsets.symmetric(horizontal: 12.0, vertical: 10.0),
-                                child: Row(
-                                  children: [
-                                    Image.asset(
-                                      'assets/images/bg_logo/BGLOGO.png',
-                                      height: media.height * 0.07,
-                                      width: 130,
-                                      fit: BoxFit.fill,
-                                    ),
-                                  ],
-                                ),
-                              ),
+                              width: media.height * 0.120, // 120
+                              fit: BoxFit.fill,
                             ),
-                          ),
-                          Expanded(
-                            flex: 2,
-                            child: Container(
-                              color: Colors.red,
-                              height: media.height * 0.085,
-                              // width: 200,
+                          ],
+                        ),
+                      ),
+                    ),
+                  ),
+
+                  // App Bar (Curved Shape part)
+                  Positioned(
+                    top: 0,
+                    right: 0,
+                    child: Container(
+                      height: media.height * 0.078,
+                      decoration: BoxDecoration(
+                        image: DecorationImage(
+                          image: AssetImage('assets/images/crate_drawer-removebg-preview.png'),
+                          fit: BoxFit.cover,
+                        ),
+                      ),
+                      child: Padding(
+                        padding: EdgeInsets.only(top: 18.0, left: 30, right: 10),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Container(
+                              height: media.height * 0.03, //30,
+                              width: media.height * 0.03, //30,
+                              decoration: BoxDecoration(
+                                color: Colors.grey,
+                                borderRadius: BorderRadius.circular(100),
+                              ),
                               child: Center(
-                                child: Row(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: [
-                                    Image.asset(
-                                      'assets/images/icon_group.png',
-                                      height: 30,
-                                      width: 30,
-                                      fit: BoxFit.fill,
-                                    ),
-                                    xMargin5,
-                                    Text(
-                                      '5.1k',
-                                      style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 20),
-                                    ),
-                                    xMargin20,
-                                    Image.asset(
-                                      'assets/images/bg_gems.png',
-                                      height: 30,
-                                      width: 30,
-                                      fit: BoxFit.fill,
-                                    ),
-                                    xMargin5,
-                                    Text(
-                                      '1.2k',
-                                      style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 20),
-                                    ),
-                                  ],
+                                child: Image.asset(
+                                  'assets/images/icon_group.png',
+                                  height: media.height * 0.02, //30,
+                                  width: media.height * 0.02, //30,
+                                  color: Colors.white,
+                                  fit: BoxFit.cover,
                                 ),
                               ),
                             ),
-                          ),
-                        ],
+                            xMargin5,
+                            Text(
+                              '5.1k',
+                              style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 20),
+                            ),
+                            xMargin20,
+                            Image.asset(
+                              'assets/images/bg_gems.png',
+                              height: media.height * 0.03, //30,
+                              width: media.height * 0.03, //30,
+                              fit: BoxFit.cover,
+                            ),
+                            xMargin5,
+                            Text(
+                              '1.2k',
+                              style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 20),
+                            ),
+                          ],
+                        ),
                       ),
                     ),
                   ),

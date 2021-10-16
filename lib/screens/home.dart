@@ -70,10 +70,10 @@ class _HomeState extends State<Home> {
                     child: Container(
                       height: media.height * 0.13,
                       width: media.width,
-                      color: Colors.blue,
+                      color: Color(0XFFFC5C62), // Colors.blue,
                       alignment: FractionalOffset.bottomLeft,
                       child: Padding(
-                        padding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 7.0),
+                        padding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           mainAxisAlignment: MainAxisAlignment.start,
@@ -110,7 +110,7 @@ class _HomeState extends State<Home> {
                       height: media.height * 0.15,
                       width: media.height * 0.15,
                       decoration: BoxDecoration(
-                        color: Colors.blue,
+                        color: Color(0XFFFC5C62), // Colors.blue,
                         borderRadius: BorderRadius.circular(100),
                       ),
                       child: Center(
@@ -134,7 +134,7 @@ class _HomeState extends State<Home> {
                     child: Container(
                       width: media.width,
                       height: media.height * 0.07,
-                      color: Colors.black,
+                      color: Color(0XFF383838), // Colors.black,
                       child: Padding(
                         padding: EdgeInsets.symmetric(horizontal: 12.0, vertical: 10.0),
                         child: Row(
