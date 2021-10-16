@@ -1,7 +1,7 @@
-import 'package:ball_gecko/models/users.dart';
 import 'package:ball_gecko/utils/margin.dart';
 import 'package:ball_gecko/widgets/chat_pop.dart';
 import 'package:ball_gecko/widgets/nav_bar_items.dart';
+import 'package:ball_gecko/widgets/spaces_list_view.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -26,6 +26,41 @@ class _HomeState extends State<Home> {
               flex: 1,
               child: Stack(
                 children: [
+                  // Active Spaces + Recent
+                  Positioned(
+                    top: media.height * 0.25,
+                    right: 0,
+                    left: 0,
+                    child: Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 15.0),
+                      child: Container(
+                        // color: Colors.grey[300],
+                        width: media.width,
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: [
+                            Text(
+                              'Active Spaces',
+                              style: TextStyle(fontSize: 35, color: Colors.grey, fontWeight: FontWeight.w700, letterSpacing: 1),
+                            ),
+                            yMargin10,
+                            SpacesBuild(),
+                            yMargin30,
+                            Text(
+                              'Recent',
+                              style: TextStyle(fontSize: 40, color: Colors.grey, fontWeight: FontWeight.w700, letterSpacing: 1),
+                            ),
+                            yMargin30,
+                            Column(
+                              children: chatMessages,
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ),
+
                   // Chat with friends container
                   Positioned(
                     top: media.height * 0.07,
@@ -35,7 +70,7 @@ class _HomeState extends State<Home> {
                       color: Colors.blue,
                       alignment: FractionalOffset.bottomLeft,
                       child: Padding(
-                        padding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 5.0),
+                        padding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 7.0),
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           mainAxisAlignment: MainAxisAlignment.start,
@@ -45,7 +80,7 @@ class _HomeState extends State<Home> {
                               'Chat with friends in',
                               style: TextStyle(
                                 color: Colors.white,
-                                fontSize: 30,
+                                fontSize: 25,
                                 fontWeight: FontWeight.w400,
                               ),
                             ),
@@ -166,109 +201,46 @@ class _HomeState extends State<Home> {
               ),
             ),
 
-            // Expanded(child: Positioned(
-            //   top: ,
-            // )),
+            // Expanded(
+            //   flex: 3,
+            //   child: Container(
+            //     color: Colors.yellow,
+            //     child: Padding(
+            //       padding: EdgeInsets.symmetric(horizontal: 15.0),
+            //       child: Container(
+            //         // color: Colors.grey[300],
+            //         width: double.infinity,
+            //         child: Column(
+            //           crossAxisAlignment: CrossAxisAlignment.start,
+            //           mainAxisAlignment: MainAxisAlignment.start,
+            //           children: [
+            //             Text(
+            //               'Active Spaces',
+            //               style: TextStyle(fontSize: 35, color: Colors.grey, fontWeight: FontWeight.w700, letterSpacing: 1),
+            //             ),
+            //             yMargin10,
+            //             SpacesBuild(),
+            //             yMargin30,
+            //             Text(
+            //               'Recent',
+            //               style: TextStyle(fontSize: 40, color: Colors.grey, fontWeight: FontWeight.w700, letterSpacing: 1),
+            //             ),
+            //             yMargin30,
+            //             Column(
+            //               children: chatMessages,
+            //             ),
+            //           ],
+            //         ),
+            //       ),
+            //     ),
+            //   ),
+            // ),
 
-            Expanded(
-              flex: 3,
-              child: Padding(
-                padding: EdgeInsets.symmetric(horizontal: 15.0),
-                child: Container(
-                  color: Colors.grey[300],
-                  width: double.infinity,
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: [
-                      Text(
-                        'Active Spaces',
-                        style: TextStyle(fontSize: 40, color: Colors.grey, fontWeight: FontWeight.w700, letterSpacing: 1),
-                      ),
-                      yMargin10,
-                      Container(
-                        color: Colors.brown,
-                        height: media.height * 0.20, // 200,
-                        child: ListView.builder(
-                          scrollDirection: Axis.horizontal,
-                          itemBuilder: (context, index) {
-                            return Padding(
-                              padding: EdgeInsets.only(right: 20.0),
-                              child: Container(
-                                // height: 150,
-                                width: media.width / 3.7, // 140,
-                                decoration: BoxDecoration(
-                                  // color: Colors.red,
-                                  borderRadius: BorderRadius.circular(40),
-                                  image: DecorationImage(
-                                    image: AssetImage(
-                                      '${users[index].image}',
-                                    ),
-                                    fit: BoxFit.fill,
-                                  ),
-                                ),
-                                child: Padding(
-                                  padding: EdgeInsets.symmetric(horizontal: 10.0, vertical: 20.0),
-                                  child: Column(
-                                    crossAxisAlignment: CrossAxisAlignment.start,
-                                    mainAxisAlignment: MainAxisAlignment.start,
-                                    children: [
-                                      Padding(
-                                        padding: EdgeInsets.only(top: 5.0),
-                                        child: Align(
-                                          alignment: Alignment.topRight,
-                                          child: Container(
-                                            height: 17,
-                                            width: 17,
-                                            color: Colors.white,
-                                            child: Center(
-                                              child: Container(
-                                                height: 13,
-                                                width: 13,
-                                                color: Colors.green,
-                                              ),
-                                            ),
-                                          ),
-                                        ),
-                                      ),
-                                      Spacer(),
-                                      Text(
-                                        '${users[index].name}\'s\nSpace',
-                                        style: TextStyle(
-                                          fontSize: 22,
-                                          color: Colors.white,
-                                          fontWeight: FontWeight.bold,
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                              ),
-                            );
-                          },
-                          itemCount: users.length,
-                        ),
-                      ),
-                      yMargin30,
-                      Text(
-                        'Recent',
-                        style: TextStyle(fontSize: 40, color: Colors.grey, fontWeight: FontWeight.w700, letterSpacing: 1),
-                      ),
-                      yMargin30,
-                      // Column(
-                      //   children: chatMessages,
-                      // ),
-                    ],
-                  ),
-                ),
-              ),
-            ),
-
-            Spacer(),
+            // Spacer(),
             Expanded(
               flex: 0,
               child: Container(
-                height: 60,
+                height: media.height * 0.06, // 60,
                 width: media.width,
                 color: Colors.black,
                 child: Padding(
@@ -289,13 +261,6 @@ class _HomeState extends State<Home> {
           ],
         ),
       ),
-      // bottomNavigationBar: BottomNavigationBar(
-      //   backgroundColor: Colors.black,
-      //   items: [
-      //     BottomNavigationBarItem(icon: Icon(Icons.add), label: 'A'),
-      //     BottomNavigationBarItem(icon: Icon(Icons.add), label: 'A'),
-      //   ],
-      // ),
     );
   }
 
@@ -307,26 +272,26 @@ class _HomeState extends State<Home> {
       message: 'Hello everybody! I\'m Folake.',
       time: '08:43',
     ),
-    yMargin20,
+    yMargin25,
     ChatPop(
-      name: 'Folake',
-      image: 'assets/images/folake.png',
-      message: 'Hello everybody! I\'m Folake.',
-      time: '08:43',
+      name: 'Brandon',
+      image: 'assets/images/Brandon.png',
+      message: 'Will do, super thank you 😃♥',
+      time: 'Tue',
     ),
-    yMargin20,
+    yMargin25,
     ChatPop(
-      name: 'Folake',
-      image: 'assets/images/folake.png',
-      message: 'Hello everybody! I\'m Folake.',
-      time: '08:43',
+      name: 'Solape',
+      image: 'assets/images/Solape.png',
+      message: 'Uploaded a picture',
+      time: 'Sun',
     ),
-    yMargin20,
+    yMargin25,
     ChatPop(
-      name: 'Folake',
-      image: 'assets/images/folake.png',
-      message: 'Hello everybody! I\'m Folake.',
-      time: '08:43',
+      name: 'Marcel',
+      image: 'assets/images/marcel.png',
+      message: 'Here is another post, if you...',
+      time: '23 Sep',
     ),
   ];
 }

@@ -24,19 +24,20 @@ class ChatPop extends StatelessWidget {
       // color: Colors.teal,
       height: media.height * 0.055, // 60,
       child: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 10.0),
+        // padding: EdgeInsets.symmetric(horizontal: 0.0),
+        padding: EdgeInsets.only(right: 10),
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             CircleAvatar(
               radius: 30,
-              backgroundColor: Colors.red,
+              // backgroundColor: Colors.red,
               backgroundImage: AssetImage(
                 image,
               ),
             ),
-            xMargin20,
+            xMargin15,
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisAlignment: MainAxisAlignment.center,
@@ -48,14 +49,14 @@ class ChatPop extends StatelessWidget {
                 yMargin5,
                 Text(
                   message,
-                  style: TextStyle(fontSize: 25, color: Colors.grey, letterSpacing: 0),
+                  style: TextStyle(fontSize: 22, color: Colors.grey, letterSpacing: 1),
                 ),
               ],
             ),
             Spacer(),
             Text(
               time,
-              style: TextStyle(fontSize: 30, color: Colors.grey, fontWeight: FontWeight.w400),
+              style: TextStyle(fontSize: 25, color: Colors.grey, fontWeight: FontWeight.w400),
             ),
           ],
         ),

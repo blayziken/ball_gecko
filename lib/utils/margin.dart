@@ -14,6 +14,7 @@ const yMargin200 = SizedBox(height: 200.0);
 
 const xMargin5 = SizedBox(width: 5.0);
 const xMargin10 = SizedBox(width: 10.0);
+const xMargin15 = SizedBox(width: 15.0);
 const xMargin20 = SizedBox(width: 20.0);
 const xMargin25 = SizedBox(width: 25.0);
 
