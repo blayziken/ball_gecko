@@ -1,7 +1,9 @@
 import 'package:ball_gecko/utils/margin.dart';
 import 'package:ball_gecko/widgets/chat_pop.dart';
+import 'package:ball_gecko/widgets/dot_indicator.dart';
 import 'package:ball_gecko/widgets/nav_bar_items.dart';
 import 'package:ball_gecko/widgets/spaces_list_view.dart';
+import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -51,7 +53,9 @@ class _HomeState extends State<Home> {
                               'Recent',
                               style: TextStyle(fontSize: 40, color: Colors.grey, fontWeight: FontWeight.w700, letterSpacing: 1),
                             ),
-                            yMargin30,
+                            yMargin10,
+                            Center(child: Indicator()),
+                            yMargin20,
                             Column(
                               children: chatMessages,
                             ),

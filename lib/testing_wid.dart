@@ -20,11 +20,20 @@ class _TestingWidgetsState extends State<TestingWidgets> {
           height: media.height,
           width: double.infinity,
           child: Padding(
-            padding: EdgeInsets.all(100.0),
+            padding: EdgeInsets.all(60.0),
             child: Center(
               child: Column(
                 children: [
-                  DotsIndicator(dotsCount: 4),
+                  DotsIndicator(
+                    dotsCount: 14,
+                    decorator: DotsDecorator(
+                      color: Colors.redAccent,
+                      size: Size.square(5),
+                      activeColor: Colors.blue,
+                      activeSize: Size.square(9),
+                      spacing: EdgeInsets.all(7),
+                    ),
+                  ),
                   // Container(
                   //   height: 200,
                   //   width: 250,
