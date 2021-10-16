@@ -37,13 +37,13 @@ class SpacesBuild extends StatelessWidget {
                       child: Align(
                         alignment: Alignment.topRight,
                         child: Container(
-                          height: 17,
-                          width: 17,
+                          height: 13,
+                          width: 13,
                           color: Colors.white,
                           child: Center(
                             child: Container(
-                              height: 13,
-                              width: 13,
+                              height: 10,
+                              width: 10,
                               color: Colors.green,
                             ),
                           ),

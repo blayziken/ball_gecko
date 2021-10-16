@@ -36,7 +36,7 @@ class _ChatScreenState extends State<ChatScreen> {
                     child: Padding(
                       padding: EdgeInsets.symmetric(horizontal: 35.0),
                       child: Container(
-                        color: Colors.grey[300],
+                        // color: Colors.grey[300],
                         width: media.width,
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
@@ -51,7 +51,7 @@ class _ChatScreenState extends State<ChatScreen> {
                                 'TODAY 6:34 PM',
                                 style: TextStyle(
                                   color: Colors.red,
-                                  fontSize: 20,
+                                  fontSize: 18,
                                   fontWeight: FontWeight.w600,
                                   letterSpacing: 1,
                                 ),
@@ -61,7 +61,7 @@ class _ChatScreenState extends State<ChatScreen> {
                             Expanded(
                               flex: 0,
                               child: Container(
-                                color: Colors.lightBlueAccent,
+                                // color: Colors.lightBlueAccent,
                                 width: double.infinity,
                                 height: media.height * 0.404, // 500,
                                 child: ListView(

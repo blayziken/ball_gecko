@@ -1,6 +1,8 @@
 import 'package:ball_gecko/utils/margin.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/painting.dart';
+import 'package:flutter_svg/svg.dart';
 
 class RowImages extends StatelessWidget {
   const RowImages({
@@ -60,17 +62,34 @@ class InviteSomeone extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Size media = MediaQuery.of(context).size;
+
     return Row(
+      crossAxisAlignment: CrossAxisAlignment.center,
       children: [
-        Container(
-          width: 80,
-          height: 80,
-          color: Colors.purple,
+        Stack(
+          alignment: Alignment.center,
+          children: [
+            SvgPicture.asset(
+              'assets/svg/Union.svg',
+              height: media.height * 0.07, // 70
+              width: media.height * 0.07, // 70,
+              color: Colors.red,
+            ),
+            Positioned(
+              top: media.height * (0.07 / 4),
+              child: Icon(
+                Icons.person_add_alt_1,
+                color: Colors.white,
+                size: 30,
+              ),
+            )
+          ],
         ),
         xMargin10,
         Text(
           'invite\nsomeone',
-          style: TextStyle(color: Colors.grey, fontSize: 22),
+          style: TextStyle(color: Colors.black45, fontSize: 19, fontWeight: FontWeight.bold),
         ),
       ],
     );

@@ -3,7 +3,6 @@ import 'package:ball_gecko/widgets/chat_pop.dart';
 import 'package:ball_gecko/widgets/dot_indicator.dart';
 import 'package:ball_gecko/widgets/nav_bar_items.dart';
 import 'package:ball_gecko/widgets/spaces_list_view.dart';
-import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -46,7 +45,7 @@ class _HomeState extends State<Home> {
                               'Active Spaces',
                               style: TextStyle(fontSize: 35, color: Colors.grey, fontWeight: FontWeight.w700, letterSpacing: 1),
                             ),
-                            yMargin10,
+                            yMargin20,
                             SpacesBuild(),
                             yMargin20,
                             Text(
@@ -129,75 +128,82 @@ class _HomeState extends State<Home> {
                     ),
                   ),
 
-                  // App Bar
+                  // App Bar (Ball Gecko Logo)
                   Positioned(
                     top: 0,
                     child: Container(
                       width: media.width,
-                      child: Row(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        children: [
-                          Expanded(
-                            flex: 3,
-                            child: Container(
-                              color: Colors.black,
+                      height: media.height * 0.07,
+                      color: Colors.black,
+                      child: Padding(
+                        padding: EdgeInsets.symmetric(horizontal: 12.0, vertical: 10.0),
+                        child: Row(
+                          children: [
+                            Image.asset(
+                              'assets/images/bg_logo/BGLOGO.png',
                               height: media.height * 0.07,
-                              // width: 200,
-                              child: Padding(
-                                padding: EdgeInsets.symmetric(horizontal: 12.0, vertical: 10.0),
-                                child: Row(
-                                  children: [
-                                    Image.asset(
-                                      'assets/images/bg_logo/BGLOGO.png',
-                                      height: media.height * 0.07,
-                                      width: 130,
-                                      fit: BoxFit.fill,
-                                    ),
-                                  ],
-                                ),
-                              ),
+                              width: media.height * 0.120, // 120
+                              fit: BoxFit.fill,
                             ),
-                          ),
-                          Expanded(
-                            flex: 2,
-                            child: Container(
-                              color: Colors.red,
-                              height: media.height * 0.085,
-                              // width: 200,
+                          ],
+                        ),
+                      ),
+                    ),
+                  ),
+
+                  // App Bar (Curved Shape part)
+                  Positioned(
+                    top: 0,
+                    right: 0,
+                    child: Container(
+                      height: media.height * 0.078,
+                      decoration: BoxDecoration(
+                        image: DecorationImage(
+                          image: AssetImage('assets/images/crate_drawer-removebg-preview.png'),
+                          fit: BoxFit.cover,
+                        ),
+                      ),
+                      child: Padding(
+                        padding: EdgeInsets.only(top: 18.0, left: 30, right: 10),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Container(
+                              height: media.height * 0.03, //30,
+                              width: media.height * 0.03, //30,
+                              decoration: BoxDecoration(
+                                color: Colors.grey,
+                                borderRadius: BorderRadius.circular(100),
+                              ),
                               child: Center(
-                                child: Row(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: [
-                                    Image.asset(
-                                      'assets/images/icon_group.png',
-                                      height: 30,
-                                      width: 30,
-                                      fit: BoxFit.fill,
-                                    ),
-                                    xMargin5,
-                                    Text(
-                                      '5.1k',
-                                      style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 20),
-                                    ),
-                                    xMargin20,
-                                    Image.asset(
-                                      'assets/images/bg_gems.png',
-                                      height: 30,
-                                      width: 30,
-                                      fit: BoxFit.fill,
-                                    ),
-                                    xMargin5,
-                                    Text(
-                                      '1.2k',
-                                      style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 20),
-                                    ),
-                                  ],
+                                child: Image.asset(
+                                  'assets/images/icon_group.png',
+                                  height: media.height * 0.02, //30,
+                                  width: media.height * 0.02, //30,
+                                  color: Colors.white,
+                                  fit: BoxFit.cover,
                                 ),
                               ),
                             ),
-                          ),
-                        ],
+                            xMargin5,
+                            Text(
+                              '5.1k',
+                              style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 20),
+                            ),
+                            xMargin20,
+                            Image.asset(
+                              'assets/images/bg_gems.png',
+                              height: media.height * 0.03, //30,
+                              width: media.height * 0.03, //30,
+                              fit: BoxFit.cover,
+                            ),
+                            xMargin5,
+                            Text(
+                              '1.2k',
+                              style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 20),
+                            ),
+                          ],
+                        ),
                       ),
                     ),
                   ),
@@ -240,7 +246,6 @@ class _HomeState extends State<Home> {
             //   ),
             // ),
 
-            // Spacer(),
             Expanded(
               flex: 0,
               child: Container(
