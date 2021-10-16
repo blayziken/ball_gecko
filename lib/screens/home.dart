@@ -28,7 +28,7 @@ class _HomeState extends State<Home> {
                 children: [
                   // Active Spaces + Recent
                   Positioned(
-                    top: media.height * 0.25,
+                    top: media.height * 0.26,
                     right: 0,
                     left: 0,
                     child: Padding(
@@ -46,7 +46,7 @@ class _HomeState extends State<Home> {
                             ),
                             yMargin10,
                             SpacesBuild(),
-                            yMargin30,
+                            yMargin20,
                             Text(
                               'Recent',
                               style: TextStyle(fontSize: 40, color: Colors.grey, fontWeight: FontWeight.w700, letterSpacing: 1),
@@ -272,21 +272,21 @@ class _HomeState extends State<Home> {
       message: 'Hello everybody! I\'m Folake.',
       time: '08:43',
     ),
-    yMargin25,
+    yMargin20,
     ChatPop(
       name: 'Brandon',
       image: 'assets/images/Brandon.png',
       message: 'Will do, super thank you 😃♥',
       time: 'Tue',
     ),
-    yMargin25,
+    yMargin20,
     ChatPop(
       name: 'Solape',
       image: 'assets/images/Solape.png',
       message: 'Uploaded a picture',
       time: 'Sun',
     ),
-    yMargin25,
+    yMargin20,
     ChatPop(
       name: 'Marcel',
       image: 'assets/images/marcel.png',

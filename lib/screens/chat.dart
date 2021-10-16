@@ -1,6 +1,8 @@
 import 'package:ball_gecko/utils/margin.dart';
 import 'package:ball_gecko/widgets/nav_bar_items.dart';
 import 'package:ball_gecko/widgets/second_screen_widgets.dart';
+import 'package:ball_gecko/widgets/spaces_list_view.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class ChatScreen extends StatefulWidget {
@@ -32,7 +34,7 @@ class _ChatScreenState extends State<ChatScreen> {
                     right: 0,
                     left: 0,
                     child: Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 15.0),
+                      padding: EdgeInsets.symmetric(horizontal: 35.0),
                       child: Container(
                         color: Colors.grey[300],
                         width: media.width,
@@ -40,30 +42,34 @@ class _ChatScreenState extends State<ChatScreen> {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           mainAxisAlignment: MainAxisAlignment.start,
                           children: [
-                            InviteSomeone(),
-                            yMargin5,
-                            RowImages(),
+                            Expanded(flex: 0, child: InviteSomeone()),
+                            yMargin20,
+                            Expanded(flex: 0, child: RowImages()),
+                            yMargin10,
                             Center(
                               child: Text(
                                 'TODAY 6:34 PM',
                                 style: TextStyle(
                                   color: Colors.red,
                                   fontSize: 20,
+                                  fontWeight: FontWeight.w600,
                                   letterSpacing: 1,
                                 ),
                               ),
                             ),
-                            yMargin5,
+                            yMargin15,
                             Expanded(
+                              flex: 0,
                               child: Container(
                                 color: Colors.lightBlueAccent,
-                                height: 500,
+                                width: double.infinity,
+                                height: media.height * 0.404, // 500,
                                 child: ListView(
                                   children: [
                                     Align(
                                       alignment: Alignment.centerRight,
                                       child: MessageBubble(
-                                        message: 'Anybody here loving Lukaku\'s form?👑',
+                                        message: 'Anybody here loving Lukaku\'s\nform?👑',
                                         profileImage: 'assets/images/2nd_page/image6.png',
                                       ),
                                     ),
@@ -76,10 +82,7 @@ class _ChatScreenState extends State<ChatScreen> {
                                       ),
                                     ),
                                     yMargin10,
-                                    Align(
-                                      alignment: Alignment.centerRight,
-                                      child: ImageUpload(),
-                                    ),
+                                    ImageUpload(),
                                     yMargin10,
                                     Align(
                                       alignment: Alignment.centerRight,
@@ -91,13 +94,13 @@ class _ChatScreenState extends State<ChatScreen> {
                                     yMargin10,
                                     Text(
                                       'Folake joined.',
-                                      style: TextStyle(color: Colors.white, fontSize: 15),
+                                      style: TextStyle(color: Colors.pink, fontSize: 20, letterSpacing: 1),
                                     ),
-                                    yMargin10,
+                                    yMargin7,
                                     Align(
                                       alignment: Alignment.centerLeft,
                                       child: MessageBubble(
-                                        message: 'Hello everyody! I\'m Folake',
+                                        message: 'Hello everyody! I\'m\nFolake',
                                         profileImage: 'assets/images/2nd_page/image4.png',
                                       ),
                                     ),
@@ -127,11 +130,11 @@ class _ChatScreenState extends State<ChatScreen> {
                           children: [
                             Spacer(),
                             Text(
-                              'Lase' 's Space',
+                              'Lase\'s Space',
                               style: TextStyle(
                                 color: Colors.white,
                                 fontSize: 25,
-                                fontWeight: FontWeight.w400,
+                                fontWeight: FontWeight.w300,
                               ),
                             ),
                             yMargin5,
@@ -139,8 +142,8 @@ class _ChatScreenState extends State<ChatScreen> {
                               'Lukaku: King\nor Not?',
                               style: TextStyle(
                                 color: Colors.white,
-                                fontSize: 50,
-                                fontWeight: FontWeight.w600,
+                                fontSize: 42,
+                                fontWeight: FontWeight.w700,
                               ),
                             ),
                           ],
@@ -250,39 +253,45 @@ class _ChatScreenState extends State<ChatScreen> {
                 ],
               ),
             ),
-
-            // Spacer(),
             Expanded(
               flex: 0,
               child: Padding(
-                padding: EdgeInsets.symmetric(horizontal: 15.0),
+                padding: EdgeInsets.symmetric(horizontal: 25.0),
                 child: Container(
-                  height: 80,
+                  height: 50,
                   width: double.infinity,
-                  color: Colors.greenAccent,
-                  child: Row(
-                    children: [
-                      Text('🙂', style: TextStyle(color: Colors.grey, fontSize: 25)),
-                      xMargin5,
-                      _sendMessageTextField(),
-                      Icon(Icons.photo_camera, size: 20, color: Colors.grey),
-                      xMargin5,
-                      Container(
-                        height: 30,
-                        width: 30,
-                        decoration: BoxDecoration(
-                          color: Colors.red,
-                          borderRadius: BorderRadius.circular(50),
+                  decoration: BoxDecoration(
+                    color: Colors.greenAccent,
+                    borderRadius: BorderRadius.circular(100),
+                  ),
+                  child: Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 10.0),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        Text('🙂', style: TextStyle(color: Colors.grey, fontSize: 35)),
+                        xMargin5,
+                        _sendMessageTextField(),
+                        Icon(Icons.photo_camera, size: 35, color: Colors.grey),
+                        xMargin5,
+                        Container(
+                          height: 35,
+                          width: 35,
+                          decoration: BoxDecoration(
+                            color: Colors.red,
+                            borderRadius: BorderRadius.circular(50),
+                          ),
+                          child: Center(
+                            child: Icon(Icons.send_outlined, size: 23, color: Colors.white),
+                          ),
                         ),
-                        child: Center(
-                          child: Icon(Icons.send_outlined, size: 20, color: Colors.white),
-                        ),
-                      ),
-                    ],
+                      ],
+                    ),
                   ),
                 ),
               ),
             ),
+            SizedBox(height: 10),
             Expanded(
               flex: 0,
               child: Container(
@@ -311,20 +320,22 @@ class _ChatScreenState extends State<ChatScreen> {
   }
 
   Widget _sendMessageTextField() {
-    return TextFormField(
-      // controller: messageController,
-      textInputAction: TextInputAction.send,
-      style: TextStyle(
-        fontWeight: FontWeight.bold,
-        fontSize: 25.0,
-      ),
-      decoration: InputDecoration(
-        border: InputBorder.none,
-        hintText: 'Leave a comment',
-        hintStyle: TextStyle(
-          color: Colors.grey,
-          fontSize: 20.0,
-          fontWeight: FontWeight.normal,
+    return Expanded(
+      child: TextFormField(
+        // controller: messageController,
+        textInputAction: TextInputAction.send,
+        style: TextStyle(
+          fontWeight: FontWeight.bold,
+          fontSize: 25.0,
+        ),
+        decoration: InputDecoration(
+          border: InputBorder.none,
+          hintText: 'Leave a comment',
+          hintStyle: TextStyle(
+            color: Colors.grey,
+            fontSize: 20.0,
+            fontWeight: FontWeight.normal,
+          ),
         ),
       ),
     );

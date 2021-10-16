@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 const yMargin5 = SizedBox(height: 5.0);
 const yMargin10 = SizedBox(height: 10.0);
+const yMargin7 = SizedBox(height: 7.0);
 const yMargin15 = SizedBox(height: 15.0);
 const yMargin20 = SizedBox(height: 20.0);
 const yMargin25 = SizedBox(height: 25.0);

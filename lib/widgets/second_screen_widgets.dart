@@ -1,4 +1,5 @@
 import 'package:ball_gecko/utils/margin.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class RowImages extends StatelessWidget {
@@ -13,37 +14,37 @@ class RowImages extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         CircleAvatar(
-          radius: 20,
+          radius: 25,
           backgroundColor: Colors.grey,
           backgroundImage: AssetImage('assets/images/Brandon.png'), // image3
         ),
         CircleAvatar(
-          radius: 20,
+          radius: 25,
           backgroundColor: Colors.grey,
           backgroundImage: AssetImage('assets/images/2nd_page/image6.png'),
         ),
         CircleAvatar(
-          radius: 20,
+          radius: 25,
           backgroundColor: Colors.grey,
           backgroundImage: AssetImage('assets/images/2nd_page/image1.png'),
         ),
         CircleAvatar(
-          radius: 20,
+          radius: 25,
           backgroundColor: Colors.grey,
           backgroundImage: AssetImage('assets/images/2nd_page/image2.png'),
         ),
         CircleAvatar(
-          radius: 20,
+          radius: 25,
           backgroundColor: Colors.grey,
           backgroundImage: AssetImage('assets/images/2nd_page/image3.png'),
         ),
         CircleAvatar(
-          radius: 20,
+          radius: 25,
           backgroundColor: Colors.grey,
           backgroundImage: AssetImage('assets/images/2nd_page/image5.png'),
         ),
         CircleAvatar(
-          radius: 20,
+          radius: 25,
           backgroundColor: Colors.grey,
           backgroundImage: AssetImage('assets/images/2nd_page/image4.png'),
         ),
@@ -62,14 +63,14 @@ class InviteSomeone extends StatelessWidget {
     return Row(
       children: [
         Container(
-          width: 150,
-          height: 150,
+          width: 80,
+          height: 80,
           color: Colors.purple,
         ),
         xMargin10,
         Text(
           'invite\nsomeone',
-          style: TextStyle(color: Colors.grey, fontSize: 15),
+          style: TextStyle(color: Colors.grey, fontSize: 22),
         ),
       ],
     );
@@ -88,36 +89,52 @@ class MessageBubble extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      children: [
-        // Message Container
-        Positioned(
-          child: Container(
-            height: 60,
-            width: 150,
-            color: Colors.black45,
-            child: Center(
-              child: Flexible(
-                child: Text(
-                  message,
-                  style: TextStyle(color: Colors.white, fontSize: 15),
+    Size media = MediaQuery.of(context).size;
+
+    return Container(
+      child: Stack(
+        children: [
+          // Message Container
+          Positioned(
+            child: Padding(
+              padding: EdgeInsets.only(right: 8.0),
+              child: Container(
+                height: 55,
+                width: media.width / 1.5, // 350,
+                decoration: BoxDecoration(
+                  color: Colors.black45,
+                  borderRadius: BorderRadius.circular(100),
+                ),
+                child: Padding(
+                  padding: EdgeInsets.only(left: 15.0, right: 35),
+                  child: Align(
+                    alignment: Alignment.centerLeft,
+                    child: Text(
+                      message,
+                      style: TextStyle(color: Colors.white, fontSize: 17, letterSpacing: 2),
+                    ),
+                  ),
                 ),
               ),
             ),
           ),
-        ),
 
-        // Profile Image
-        Positioned(
-          right: 0,
-          bottom: 0,
-          child: CircleAvatar(
-            radius: 15,
-            backgroundColor: Colors.white,
-            backgroundImage: AssetImage(profileImage),
+          // Profile Image
+          Positioned(
+            right: 0,
+            bottom: 0,
+            child: CircleAvatar(
+              radius: 16,
+              backgroundColor: Colors.white,
+              child: CircleAvatar(
+                radius: 15,
+                backgroundColor: Colors.white,
+                backgroundImage: AssetImage(profileImage),
+              ),
+            ),
           ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 }
@@ -131,19 +148,21 @@ class ImageUpload extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
+        Spacer(),
         Icon(
           Icons.cancel,
-          color: Colors.orangeAccent,
-          size: 20,
+          color: Colors.orange[800],
+          size: 30,
         ),
-        xMargin10,
+        xMargin20,
         Icon(
           Icons.arrow_downward_rounded,
           color: Colors.black,
-          size: 20,
+          size: 30,
         ),
-        xMargin10,
+        xMargin15,
         Container(
+          height: 125,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(30),
             color: Colors.purple,
@@ -154,18 +173,6 @@ class ImageUpload extends StatelessWidget {
           ),
         ),
         yMargin10,
-
-        // Container(
-        //   height: 30,
-        //   width: 30,
-        //   // color: Colors.orangeAccent,
-        //   child: Center(
-        //     child: Icon(
-        //       Icons.cancel,
-        //       color: Colors.orangeAccent,
-        //     ),
-        //   ),
-        // ),
       ],
     );
   }

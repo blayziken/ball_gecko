@@ -1,6 +1,6 @@
 import 'dart:math';
-
 import 'package:flutter/material.dart';
+import 'package:dots_indicator/dots_indicator.dart';
 
 class TestingWidgets extends StatefulWidget {
   const TestingWidgets({Key? key}) : super(key: key);
@@ -24,32 +24,33 @@ class _TestingWidgetsState extends State<TestingWidgets> {
             child: Center(
               child: Column(
                 children: [
-                  Container(
-                    height: 200,
-                    width: 250,
-                    decoration: BoxDecoration(
-                      color: Colors.indigo,
-                      borderRadius: BorderRadius.only(
-                        bottomLeft: Radius.elliptical(100, 40),
-                        topLeft: Radius.elliptical(900, -80),
-                        topRight: Radius.circular(50),
-                      ),
-                    ),
-                  ),
-                  Spacer(),
-                  ClipPath(
-                    clipper: MyCustomClipper(),
-                    child: Container(
-                      height: 200,
-                      width: 250,
-                      decoration: BoxDecoration(
-                        color: Colors.indigo,
-                        borderRadius: BorderRadius.only(
-                          bottomLeft: Radius.circular(60),
-                        ),
-                      ),
-                    ),
-                  ),
+                  DotsIndicator(dotsCount: 4),
+                  // Container(
+                  //   height: 200,
+                  //   width: 250,
+                  //   decoration: BoxDecoration(
+                  //     color: Colors.indigo,
+                  //     borderRadius: BorderRadius.only(
+                  //       bottomLeft: Radius.elliptical(100, 40),
+                  //       topLeft: Radius.elliptical(900, -80),
+                  //       topRight: Radius.circular(50),
+                  //     ),
+                  //   ),
+                  // ),
+                  // Spacer(),
+                  // ClipPath(
+                  //   clipper: MyCustomClipper(),
+                  //   child: Container(
+                  //     height: 200,
+                  //     width: 250,
+                  //     decoration: BoxDecoration(
+                  //       color: Colors.indigo,
+                  //       borderRadius: BorderRadius.only(
+                  //         bottomLeft: Radius.circular(60),
+                  //       ),
+                  //     ),
+                  //   ),
+                  // ),
                 ],
               ),
             ),
