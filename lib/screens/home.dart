@@ -1,6 +1,7 @@
 import 'package:ball_gecko/models/users.dart';
 import 'package:ball_gecko/utils/margin.dart';
 import 'package:ball_gecko/widgets/chat_pop.dart';
+import 'package:ball_gecko/widgets/nav_bar_items.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -80,6 +81,9 @@ class _HomeState extends State<Home> {
                           child: CircleAvatar(
                             backgroundColor: Colors.black,
                             radius: 70,
+                            backgroundImage: AssetImage(
+                              'assets/images/Lase_1.png',
+                            ),
                           ),
                         ),
                       ),
@@ -259,9 +263,39 @@ class _HomeState extends State<Home> {
                 ),
               ),
             ),
+
+            Spacer(),
+            Expanded(
+              flex: 0,
+              child: Container(
+                height: 60,
+                width: media.width,
+                color: Colors.black,
+                child: Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 30.0, vertical: 10.0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      NavBarItem(icon: 'assets/images/icon_flame.png'),
+                      NavBarItem(icon: 'assets/images/icon_group.png'),
+                      NavBarItem(icon: 'assets/images/logo.png'),
+                      NavBarItem(icon: 'assets/images/icon_bag.png'),
+                      NavBarProfileImage(),
+                    ],
+                  ),
+                ),
+              ),
+            ),
           ],
         ),
       ),
+      // bottomNavigationBar: BottomNavigationBar(
+      //   backgroundColor: Colors.black,
+      //   items: [
+      //     BottomNavigationBarItem(icon: Icon(Icons.add), label: 'A'),
+      //     BottomNavigationBarItem(icon: Icon(Icons.add), label: 'A'),
+      //   ],
+      // ),
     );
   }
 
