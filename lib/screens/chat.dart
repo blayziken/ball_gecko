@@ -363,13 +363,15 @@ class _ChatScreenState extends State<ChatScreen> {
   }
 
   Widget _sendMessageTextField() {
+    Size media = MediaQuery.of(context).size;
+
     return Expanded(
       child: TextFormField(
         // controller: messageController,
         textInputAction: TextInputAction.send,
         style: TextStyle(
           fontWeight: FontWeight.normal,
-          fontSize: 20.0,
+          fontSize: media.height * 0.02, // 20.0,
           color: Colors.white,
         ),
         decoration: InputDecoration(
@@ -378,7 +380,7 @@ class _ChatScreenState extends State<ChatScreen> {
           hintText: 'Leave a comment',
           hintStyle: GoogleFonts.workSans(
             textStyle: TextStyle(color: Color(0XFF808191)),
-            fontSize: 20,
+            fontSize: media.height * 0.02, // 20,
             // fontWeight: FontWeight.w600,
             fontStyle: FontStyle.normal,
           ),
