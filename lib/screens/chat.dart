@@ -160,7 +160,7 @@ class _ChatScreenState extends State<ChatScreen> {
                       height: media.height * 0.15,
                       width: media.height * 0.15,
                       decoration: BoxDecoration(
-                        color: Colors.blue,
+                        color: Color(0XFFFC5C62), // Colors.blue,
                         borderRadius: BorderRadius.circular(100),
                       ),
                       child: Center(

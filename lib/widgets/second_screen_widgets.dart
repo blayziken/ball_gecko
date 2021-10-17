@@ -177,7 +177,7 @@ class ImageUpload extends StatelessWidget {
         Icon(
           Icons.arrow_downward_rounded,
           color: Colors.black,
-          size: 30,
+          size: 25,
         ),
         xMargin15,
         Container(

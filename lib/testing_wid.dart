@@ -3,6 +3,7 @@ import 'package:ball_gecko/utils/margin.dart';
 import 'package:flutter/material.dart';
 import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class TestingWidgets extends StatefulWidget {
   const TestingWidgets({Key? key}) : super(key: key);
@@ -95,6 +96,24 @@ class _TestingWidgetsState extends State<TestingWidgets> {
                         spacing: EdgeInsets.all(7),
                       ),
                     ),
+
+                    Text(
+                      'This is Google Fonts',
+                      style: GoogleFonts.workSans(
+                        textStyle: TextStyle(color: Colors.blue, letterSpacing: .5),
+                      ),
+                    ),
+
+                    Text(
+                      'This is Google Fonts',
+                      style: GoogleFonts.workSans(
+                        textStyle: Theme.of(context).textTheme.headline4,
+                        fontSize: 48,
+                        fontWeight: FontWeight.w700,
+                        fontStyle: FontStyle.italic,
+                      ),
+                    ),
+
                     // Container(
                     //   height: 200,
                     //   width: 250,

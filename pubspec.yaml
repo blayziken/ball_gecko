@@ -15,6 +15,7 @@ dependencies:
   cupertino_icons: ^1.0.2
   dots_indicator:
   flutter_svg:
+  google_fonts:
 
 dev_dependencies:
   flutter_test:
