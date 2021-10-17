@@ -1,9 +1,10 @@
 import 'package:ball_gecko/utils/margin.dart';
 import 'package:ball_gecko/widgets/nav_bar_items.dart';
 import 'package:ball_gecko/widgets/second_screen_widgets.dart';
-import 'package:ball_gecko/widgets/spaces_list_view.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class ChatScreen extends StatefulWidget {
   const ChatScreen({Key? key}) : super(key: key);
@@ -94,7 +95,15 @@ class _ChatScreenState extends State<ChatScreen> {
                                     yMargin10,
                                     Text(
                                       'Folake joined.',
-                                      style: TextStyle(color: Colors.pink, fontSize: 20, letterSpacing: 1),
+                                      style: GoogleFonts.workSans(
+                                        textStyle: TextStyle(
+                                          color: Color(0XFFED1C24),
+                                          letterSpacing: .5,
+                                        ),
+                                        fontSize: 20,
+                                        fontWeight: FontWeight.w500,
+                                        fontStyle: FontStyle.normal,
+                                      ),
                                     ),
                                     yMargin7,
                                     Align(
@@ -131,8 +140,8 @@ class _ChatScreenState extends State<ChatScreen> {
                             Spacer(),
                             Text(
                               'Lase\'s Space',
-                              style: TextStyle(
-                                color: Colors.white,
+                              style: GoogleFonts.workSans(
+                                textStyle: TextStyle(color: Colors.white),
                                 fontSize: 23,
                                 fontWeight: FontWeight.w300,
                               ),
@@ -140,10 +149,10 @@ class _ChatScreenState extends State<ChatScreen> {
                             yMargin5,
                             Text(
                               'Lukaku: King\nor Not?',
-                              style: TextStyle(
-                                color: Colors.white,
+                              style: GoogleFonts.workSans(
+                                textStyle: TextStyle(color: Colors.white),
                                 fontSize: 40,
-                                fontWeight: FontWeight.w700,
+                                fontWeight: FontWeight.w600,
                               ),
                             ),
                           ],
@@ -186,14 +195,15 @@ class _ChatScreenState extends State<ChatScreen> {
                       height: media.height * 0.07,
                       color: Color(0XFF383838), // Colors.black,
                       child: Padding(
-                        padding: EdgeInsets.symmetric(horizontal: 12.0, vertical: 10.0),
+                        padding: EdgeInsets.symmetric(horizontal: 0.0, vertical: 10.0),
                         child: Row(
                           children: [
-                            Image.asset(
-                              'assets/images/bg_logo/BGLOGO.png',
+                            SvgPicture.asset(
+                              'assets/svg/logo_svg.svg',
+                              color: Colors.white70,
+                              fit: BoxFit.contain,
                               height: media.height * 0.07,
-                              width: media.height * 0.120, // 120
-                              fit: BoxFit.fill,
+                              width: media.height * 0.120,
                             ),
                           ],
                         ),
@@ -214,7 +224,7 @@ class _ChatScreenState extends State<ChatScreen> {
                         ),
                       ),
                       child: Padding(
-                        padding: EdgeInsets.only(top: 18.0, left: 30, right: 10),
+                        padding: EdgeInsets.only(top: 18.0, left: 30, right: 20),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
@@ -226,12 +236,12 @@ class _ChatScreenState extends State<ChatScreen> {
                                 borderRadius: BorderRadius.circular(100),
                               ),
                               child: Center(
-                                child: Image.asset(
-                                  'assets/images/icon_group.png',
+                                child: SvgPicture.asset(
+                                  'assets/svg/Vector_icon1.svg',
+                                  color: Colors.white70,
+                                  fit: BoxFit.contain,
                                   height: media.height * 0.02, //30,
-                                  width: media.height * 0.02, //30,
-                                  color: Colors.white,
-                                  fit: BoxFit.cover,
+                                  width: media.height * 0.02, //30,,
                                 ),
                               ),
                             ),
@@ -240,7 +250,7 @@ class _ChatScreenState extends State<ChatScreen> {
                               '5.1k',
                               style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 20),
                             ),
-                            xMargin20,
+                            xMargin10,
                             Image.asset(
                               'assets/images/bg_gems.png',
                               height: media.height * 0.03, //30,
@@ -260,6 +270,8 @@ class _ChatScreenState extends State<ChatScreen> {
                 ],
               ),
             ),
+
+            // TextField
             Expanded(
               flex: 0,
               child: Padding(
@@ -268,7 +280,7 @@ class _ChatScreenState extends State<ChatScreen> {
                   height: 50,
                   width: double.infinity,
                   decoration: BoxDecoration(
-                    color: Colors.greenAccent,
+                    color: Color(0XFF252836),
                     borderRadius: BorderRadius.circular(100),
                   ),
                   child: Padding(
@@ -276,10 +288,16 @@ class _ChatScreenState extends State<ChatScreen> {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: [
-                        Text('🙂', style: TextStyle(color: Colors.grey, fontSize: 35)),
+                        SvgPicture.asset(
+                          'assets/svg/smiley.svg',
+                          height: media.height * 0.035, // 35,
+                          width: media.height * 0.035, // 35,
+                          color: Color(0XFF808191),
+                          fit: BoxFit.cover,
+                        ),
                         xMargin5,
                         _sendMessageTextField(),
-                        Icon(Icons.photo_camera, size: 35, color: Colors.grey),
+                        Icon(Icons.photo_camera, size: 35, color: Color(0XFF808191)),
                         xMargin5,
                         Container(
                           height: 35,
@@ -289,7 +307,13 @@ class _ChatScreenState extends State<ChatScreen> {
                             borderRadius: BorderRadius.circular(50),
                           ),
                           child: Center(
-                            child: Icon(Icons.send_outlined, size: 23, color: Colors.white),
+                            child: SvgPicture.asset(
+                              'assets/svg/send_icon.svg',
+                              height: media.height * 0.02, // 20
+                              width: media.height * 0.02, // 20,
+                              color: Colors.white,
+                              fit: BoxFit.cover,
+                            ),
                           ),
                         ),
                       ],
@@ -299,21 +323,23 @@ class _ChatScreenState extends State<ChatScreen> {
               ),
             ),
             SizedBox(height: 10),
+
+            // Bottom Nav Bar
             Expanded(
               flex: 0,
               child: Container(
                 height: media.height * 0.06, // 60,
                 width: media.width,
-                color: Colors.black,
+                color: Color(0XFF383838), // Colors.black,
                 child: Padding(
                   padding: EdgeInsets.symmetric(horizontal: 30.0, vertical: 10.0),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      NavBarItem(icon: 'assets/images/icon_flame.png'),
-                      NavBarItem(icon: 'assets/images/icon_group.png'),
-                      NavBarItem(icon: 'assets/images/logo.png'),
-                      NavBarItem(icon: 'assets/images/icon_bag.png'),
+                      NavBarItem(icon: 'assets/svg/Hot_icon.svg'),
+                      NavBarItem(icon: 'assets/svg/Communities_icon.svg'),
+                      NavBarItem(icon: 'assets/svg/BG_icon_svg.svg'),
+                      NavBarItem(icon: 'assets/svg/bag_svg.svg'),
                       NavBarProfileImage(),
                     ],
                   ),
@@ -332,16 +358,19 @@ class _ChatScreenState extends State<ChatScreen> {
         // controller: messageController,
         textInputAction: TextInputAction.send,
         style: TextStyle(
-          fontWeight: FontWeight.bold,
-          fontSize: 25.0,
+          fontWeight: FontWeight.normal,
+          fontSize: 20.0,
+          color: Colors.white,
         ),
         decoration: InputDecoration(
+          contentPadding: EdgeInsets.all(0),
           border: InputBorder.none,
           hintText: 'Leave a comment',
-          hintStyle: TextStyle(
-            color: Colors.grey,
-            fontSize: 20.0,
-            fontWeight: FontWeight.normal,
+          hintStyle: GoogleFonts.workSans(
+            textStyle: TextStyle(color: Color(0XFF808191)),
+            fontSize: 20,
+            // fontWeight: FontWeight.w600,
+            fontStyle: FontStyle.normal,
           ),
         ),
       ),

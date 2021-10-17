@@ -5,6 +5,8 @@ import 'package:ball_gecko/widgets/nav_bar_items.dart';
 import 'package:ball_gecko/widgets/spaces_list_view.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
@@ -43,14 +45,24 @@ class _HomeState extends State<Home> {
                           children: [
                             Text(
                               'Active Spaces',
-                              style: TextStyle(fontSize: 35, color: Colors.grey, fontWeight: FontWeight.w700, letterSpacing: 1),
+                              style: GoogleFonts.workSans(
+                                textStyle: TextStyle(color: Color(0XFF7f7f7f), letterSpacing: 1),
+                                fontSize: 35,
+                                fontWeight: FontWeight.w600,
+                                fontStyle: FontStyle.normal,
+                              ),
                             ),
                             yMargin20,
                             SpacesBuild(),
                             yMargin20,
                             Text(
                               'Recent',
-                              style: TextStyle(fontSize: 40, color: Colors.grey, fontWeight: FontWeight.w700, letterSpacing: 1),
+                              style: GoogleFonts.workSans(
+                                textStyle: TextStyle(color: Color(0XFF7f7f7f), letterSpacing: 1),
+                                fontSize: 35,
+                                fontWeight: FontWeight.w600,
+                                fontStyle: FontStyle.normal,
+                              ),
                             ),
                             yMargin10,
                             Center(child: Indicator()),
@@ -81,8 +93,8 @@ class _HomeState extends State<Home> {
                             Spacer(),
                             Text(
                               'Chat with friends in',
-                              style: TextStyle(
-                                color: Colors.white,
+                              style: GoogleFonts.workSans(
+                                textStyle: TextStyle(color: Colors.white),
                                 fontSize: 25,
                                 fontWeight: FontWeight.w400,
                               ),
@@ -90,8 +102,8 @@ class _HomeState extends State<Home> {
                             yMargin5,
                             Text(
                               'Spaces',
-                              style: TextStyle(
-                                color: Colors.white,
+                              style: GoogleFonts.workSans(
+                                textStyle: TextStyle(color: Colors.white),
                                 fontSize: 45,
                                 fontWeight: FontWeight.w600,
                               ),
@@ -136,14 +148,15 @@ class _HomeState extends State<Home> {
                       height: media.height * 0.07,
                       color: Color(0XFF383838), // Colors.black,
                       child: Padding(
-                        padding: EdgeInsets.symmetric(horizontal: 12.0, vertical: 10.0),
+                        padding: EdgeInsets.symmetric(horizontal: 0.0, vertical: 10.0),
                         child: Row(
                           children: [
-                            Image.asset(
-                              'assets/images/bg_logo/BGLOGO.png',
+                            SvgPicture.asset(
+                              'assets/svg/logo_svg.svg',
+                              color: Colors.white70,
+                              fit: BoxFit.contain,
                               height: media.height * 0.07,
-                              width: media.height * 0.120, // 120
-                              fit: BoxFit.fill,
+                              width: media.height * 0.120,
                             ),
                           ],
                         ),
@@ -164,7 +177,7 @@ class _HomeState extends State<Home> {
                         ),
                       ),
                       child: Padding(
-                        padding: EdgeInsets.only(top: 18.0, left: 30, right: 10),
+                        padding: EdgeInsets.only(top: 18.0, left: 30, right: 20),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
@@ -176,12 +189,12 @@ class _HomeState extends State<Home> {
                                 borderRadius: BorderRadius.circular(100),
                               ),
                               child: Center(
-                                child: Image.asset(
-                                  'assets/images/icon_group.png',
+                                child: SvgPicture.asset(
+                                  'assets/svg/Vector_icon1.svg',
+                                  color: Colors.white70,
+                                  fit: BoxFit.contain,
                                   height: media.height * 0.02, //30,
-                                  width: media.height * 0.02, //30,
-                                  color: Colors.white,
-                                  fit: BoxFit.cover,
+                                  width: media.height * 0.02, //30,,
                                 ),
                               ),
                             ),
@@ -190,7 +203,7 @@ class _HomeState extends State<Home> {
                               '5.1k',
                               style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 20),
                             ),
-                            xMargin20,
+                            xMargin10,
                             Image.asset(
                               'assets/images/bg_gems.png',
                               height: media.height * 0.03, //30,
@@ -211,56 +224,22 @@ class _HomeState extends State<Home> {
               ),
             ),
 
-            // Expanded(
-            //   flex: 3,
-            //   child: Container(
-            //     color: Colors.yellow,
-            //     child: Padding(
-            //       padding: EdgeInsets.symmetric(horizontal: 15.0),
-            //       child: Container(
-            //         // color: Colors.grey[300],
-            //         width: double.infinity,
-            //         child: Column(
-            //           crossAxisAlignment: CrossAxisAlignment.start,
-            //           mainAxisAlignment: MainAxisAlignment.start,
-            //           children: [
-            //             Text(
-            //               'Active Spaces',
-            //               style: TextStyle(fontSize: 35, color: Colors.grey, fontWeight: FontWeight.w700, letterSpacing: 1),
-            //             ),
-            //             yMargin10,
-            //             SpacesBuild(),
-            //             yMargin30,
-            //             Text(
-            //               'Recent',
-            //               style: TextStyle(fontSize: 40, color: Colors.grey, fontWeight: FontWeight.w700, letterSpacing: 1),
-            //             ),
-            //             yMargin30,
-            //             Column(
-            //               children: chatMessages,
-            //             ),
-            //           ],
-            //         ),
-            //       ),
-            //     ),
-            //   ),
-            // ),
-
+            // Bottom Nav Bar
             Expanded(
               flex: 0,
               child: Container(
                 height: media.height * 0.06, // 60,
                 width: media.width,
-                color: Colors.black,
+                color: Color(0XFF383838), // Colors.black,
                 child: Padding(
                   padding: EdgeInsets.symmetric(horizontal: 30.0, vertical: 10.0),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      NavBarItem(icon: 'assets/images/icon_flame.png'),
-                      NavBarItem(icon: 'assets/images/icon_group.png'),
-                      NavBarItem(icon: 'assets/images/logo.png'),
-                      NavBarItem(icon: 'assets/images/icon_bag.png'),
+                      NavBarItem(icon: 'assets/svg/Hot_icon.svg'),
+                      NavBarItem(icon: 'assets/svg/Communities_icon.svg'),
+                      NavBarItem(icon: 'assets/svg/BG_icon_svg.svg'),
+                      NavBarItem(icon: 'assets/svg/bag_svg.svg'),
                       NavBarProfileImage(),
                     ],
                   ),
@@ -273,7 +252,6 @@ class _HomeState extends State<Home> {
     );
   }
 
-  //
   List<Widget> chatMessages = [
     ChatPop(
       name: 'Folake',

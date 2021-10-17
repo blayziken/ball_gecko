@@ -27,5 +27,5 @@ flutter:
   assets:
     - assets/images/
     - assets/svg/
-    - assets/images/bg_logo/
     - assets/images/2nd_page/
+    - assets/svg/person_icon/

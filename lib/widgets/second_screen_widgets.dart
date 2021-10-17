@@ -3,6 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class RowImages extends StatelessWidget {
   const RowImages({
@@ -78,10 +79,28 @@ class InviteSomeone extends StatelessWidget {
             ),
             Positioned(
               top: media.height * (0.07 / 4),
-              child: Icon(
-                Icons.person_add_alt_1,
-                color: Colors.white,
-                size: 30,
+              left: 15,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  SvgPicture.asset(
+                    'assets/svg/person_icon/Vector.svg',
+                    height: media.height * 0.025, // 70
+                    width: media.height * 0.025, // 70,
+                    color: Colors.white,
+                  ),
+                  Column(
+                    children: [
+                      Icon(
+                        Icons.add,
+                        color: Colors.white,
+                        size: 15,
+                      ),
+                      // Spacer(),
+                    ],
+                  ),
+                ],
               ),
             )
           ],
@@ -89,7 +108,12 @@ class InviteSomeone extends StatelessWidget {
         xMargin10,
         Text(
           'invite\nsomeone',
-          style: TextStyle(color: Colors.black45, fontSize: 19, fontWeight: FontWeight.bold),
+          style: GoogleFonts.workSans(
+            textStyle: TextStyle(color: Color(0XFF7f7f7f)),
+            fontSize: 19,
+            fontWeight: FontWeight.w600,
+            fontStyle: FontStyle.normal,
+          ),
         ),
       ],
     );
@@ -121,7 +145,7 @@ class MessageBubble extends StatelessWidget {
                 height: 55,
                 width: media.width / 1.5, // 350,
                 decoration: BoxDecoration(
-                  color: Colors.black45,
+                  color: Color(0XFF373E4E),
                   borderRadius: BorderRadius.circular(100),
                 ),
                 child: Padding(
@@ -169,8 +193,8 @@ class ImageUpload extends StatelessWidget {
       children: [
         Spacer(),
         Icon(
-          Icons.cancel,
-          color: Colors.orange[800],
+          Icons.cancel_rounded,
+          color: Color(0XFFF18303),
           size: 30,
         ),
         xMargin20,

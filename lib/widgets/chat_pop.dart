@@ -1,6 +1,7 @@
 import 'package:ball_gecko/utils/margin.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class ChatPop extends StatelessWidget {
   final String name;
@@ -44,19 +45,34 @@ class ChatPop extends StatelessWidget {
               children: [
                 Text(
                   name,
-                  style: TextStyle(fontSize: 25, color: Colors.grey, fontWeight: FontWeight.w600),
+                  style: GoogleFonts.workSans(
+                    textStyle: TextStyle(color: Color(0XFF7f7f7f), letterSpacing: 1),
+                    fontSize: 25,
+                    fontWeight: FontWeight.w400,
+                    fontStyle: FontStyle.normal,
+                  ),
                 ),
                 yMargin5,
                 Text(
                   message,
-                  style: TextStyle(fontSize: 22, color: Colors.grey, letterSpacing: 1),
+                  style: GoogleFonts.workSans(
+                    textStyle: TextStyle(color: Color(0XFF7f7f7f), letterSpacing: 1),
+                    fontSize: 22,
+                    fontWeight: FontWeight.w300,
+                    fontStyle: FontStyle.normal,
+                  ),
                 ),
               ],
             ),
             Spacer(),
             Text(
               time,
-              style: TextStyle(fontSize: 25, color: Colors.grey, fontWeight: FontWeight.w400),
+              style: GoogleFonts.workSans(
+                textStyle: TextStyle(color: Color(0XFF7f7f7f)),
+                fontSize: 25,
+                fontWeight: FontWeight.w400,
+                fontStyle: FontStyle.normal,
+              ),
             ),
           ],
         ),

@@ -1,23 +1,22 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 
 class NavBarItem extends StatelessWidget {
   final String icon;
-  const NavBarItem({
-    Key? key,
-    required this.icon,
-  }) : super(key: key);
+  const NavBarItem({Key? key, required this.icon}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    Size media = MediaQuery.of(context).size;
+
     return Container(
-      height: 35,
-      width: 30,
+      height: media.height * 0.035,
+      width: media.height * 0.035,
       // color: Colors.green,
-      child: Image.asset(
+      child: SvgPicture.asset(
         icon,
+        color: Colors.white70,
         fit: BoxFit.contain,
-        // width: 30,
-        // height: 40,
       ),
     );
   }
@@ -57,3 +56,8 @@ class NavBarProfileImage extends StatelessWidget {
     );
   }
 }
+
+// NavBarItem(icon: 'assets/images/icon_flame.png'),
+// NavBarItem(icon: 'assets/images/icon_group.png'),
+// NavBarItem(icon: 'assets/images/logo.png'),
+// NavBarItem(icon: 'assets/images/icon_bag.png'),
