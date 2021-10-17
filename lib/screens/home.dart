@@ -128,25 +128,28 @@ class _HomeState extends State<Home> {
                   Positioned(
                     top: media.height * 0.09,
                     right: media.width * 0.05,
-                    child: Container(
-                      height: media.height * 0.15,
-                      width: media.height * 0.15,
-                      decoration: BoxDecoration(
-                        color: Color(0XFFFC5C62), // Colors.blue,
-                        borderRadius: BorderRadius.circular(100),
-                      ),
-                      child: Center(
-                        child: Padding(
-                          padding: EdgeInsets.all(5.0),
-                          child: CircleAvatar(
-                            backgroundColor: Colors.black,
-                            radius: 70,
-                            backgroundImage: AssetImage(
-                              'assets/images/Lase_1.png',
+                    child: InkWell(
+                      child: Container(
+                        height: media.height * 0.15,
+                        width: media.height * 0.15,
+                        decoration: BoxDecoration(
+                          color: Color(0XFFFC5C62), // Colors.blue,
+                          borderRadius: BorderRadius.circular(100),
+                        ),
+                        child: Center(
+                          child: Padding(
+                            padding: EdgeInsets.all(5.0),
+                            child: CircleAvatar(
+                              backgroundColor: Colors.black,
+                              radius: 70,
+                              backgroundImage: AssetImage(
+                                'assets/images/Lase_1.png',
+                              ),
                             ),
                           ),
                         ),
                       ),
+                      onTap: () => Navigator.pushNamed(context, '/chat-screen'),
                     ),
                   ),
 

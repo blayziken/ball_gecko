@@ -51,7 +51,7 @@ class NavBarProfileImage extends StatelessWidget {
                 children: [
                   Spacer(),
                   CircleAvatar(
-                    radius: media.height * 0.004, // 4,
+                    radius: media.height * 0.003, // 4,
                     backgroundColor: Colors.red,
                   ),
                 ],
