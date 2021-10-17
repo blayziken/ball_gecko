@@ -144,7 +144,7 @@ class MessageBubble extends StatelessWidget {
             child: Padding(
               padding: EdgeInsets.only(right: 8.0),
               child: Container(
-                height: media.height * 0.050, // 55,
+                height: media.height * 0.055, // 55,
                 width: media.width / 1.5, // 350,
                 decoration: BoxDecoration(
                   color: Color(0XFF373E4E),
@@ -206,18 +206,18 @@ class ImageUpload extends StatelessWidget {
           size: media.height * 0.03, // 30,
         ),
         // xMargin10,
-        SizedBox(width: media.height * 0.01),
+        SizedBox(width: media.height * 0.03),
         Icon(
           Icons.arrow_downward_rounded,
           color: Colors.black,
           size: media.height * 0.025, // 25,
         ),
         // xMargin5,
-        SizedBox(width: media.height * 0.001),
+        SizedBox(width: media.height * 0.02),
 
         Expanded(
           child: Container(
-            height: media.height * 0.120, // 125,
+            height: media.height * 0.125, // 125,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(30),
               color: Colors.purple,
@@ -232,55 +232,3 @@ class ImageUpload extends StatelessWidget {
     );
   }
 }
-
-// Widget _sendMessageTextField() {
-//   return Container(
-//     child: Padding(
-//       padding: EdgeInsets.only(left: 15, right: 15, top: 5),
-//       child: Row(
-//         children: [
-//           Expanded(
-//             child: Container(
-//               height: 55,
-//               decoration: BoxDecoration(
-//                 color: Colors.grey[300],
-//                 borderRadius: BorderRadius.circular(10),
-//               ),
-//               child: Padding(
-//                 padding: EdgeInsets.all(8.0),
-//                 child: TextFormField(
-//                   // controller: messageController,
-//                   textInputAction: TextInputAction.send,
-//                   // keyboardType: ,
-//                   style: TextStyle(
-//                     fontWeight: FontWeight.bold,
-//                     fontSize: 25.0,
-//                   ),
-//                   decoration: InputDecoration(
-//                     border: InputBorder.none,
-//                     hintText: 'Aa',
-//                     hintStyle: TextStyle(
-//                       color: Colors.grey,
-//                       fontSize: 22.0,
-//                       fontWeight: FontWeight.normal,
-//                     ),
-//                     suffixIcon: Icon(
-//                       Icons.mic,
-//                       color: Colors.black,
-//                       size: 30,
-//                     ),
-//                   ),
-//                   onFieldSubmitted: (value) {
-//                     messages.add(value);
-//                     messageCtrl.clear();
-//                     setState(() {});
-//                   },
-//                 ),
-//               ),
-//             ),
-//           ),
-//         ],
-//       ),
-//     ),
-//   );
-// }

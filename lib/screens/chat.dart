@@ -44,9 +44,13 @@ class _ChatScreenState extends State<ChatScreen> {
                           mainAxisAlignment: MainAxisAlignment.start,
                           children: [
                             Expanded(flex: 0, child: InviteSomeone()),
-                            yMargin20,
+                            // yMargin20,
+                            SizedBox(height: media.height * 0.020),
+
                             Expanded(flex: 0, child: RowImages()),
-                            yMargin10,
+                            // yMargin10,
+                            SizedBox(height: media.height * 0.010),
+
                             Center(
                               child: Text(
                                 'TODAY 6:34 PM',
@@ -58,7 +62,8 @@ class _ChatScreenState extends State<ChatScreen> {
                                 ),
                               ),
                             ),
-                            yMargin15,
+                            // yMargin15,
+                            SizedBox(height: media.height * 0.010),
                             Expanded(
                               flex: 0,
                               child: Container(
@@ -75,7 +80,7 @@ class _ChatScreenState extends State<ChatScreen> {
                                       ),
                                     ),
                                     // yMargin5,
-                                    SizedBox(height: media.height * 0.007),
+                                    SizedBox(height: media.height * 0.008),
                                     Align(
                                       alignment: Alignment.centerRight,
                                       child: MessageBubble(
@@ -84,11 +89,11 @@ class _ChatScreenState extends State<ChatScreen> {
                                       ),
                                     ),
                                     // yMargin5,
-                                    SizedBox(height: media.height * 0.007),
+                                    SizedBox(height: media.height * 0.008),
 
                                     ImageUpload(),
                                     // yMargin5,
-                                    SizedBox(height: media.height * 0.007),
+                                    SizedBox(height: media.height * 0.008),
 
                                     Align(
                                       alignment: Alignment.centerRight,
@@ -98,7 +103,7 @@ class _ChatScreenState extends State<ChatScreen> {
                                       ),
                                     ),
                                     // yMargin5,
-                                    SizedBox(height: media.height * 0.007),
+                                    SizedBox(height: media.height * 0.008),
 
                                     Text(
                                       'Folake joined.',
@@ -107,13 +112,13 @@ class _ChatScreenState extends State<ChatScreen> {
                                           color: Color(0XFFED1C24),
                                           letterSpacing: .5,
                                         ),
-                                        fontSize: media.height * 0.020, // 20,
+                                        fontSize: media.height * 0.018, // 20,
                                         fontWeight: FontWeight.w500,
                                         fontStyle: FontStyle.normal,
                                       ),
                                     ),
                                     // yMargin5,
-                                    SizedBox(height: media.height * 0.007),
+                                    SizedBox(height: media.height * 0.006),
 
                                     Align(
                                       alignment: Alignment.centerLeft,
@@ -141,27 +146,34 @@ class _ChatScreenState extends State<ChatScreen> {
                       color: Color(0XFFFC5C62), // Colors.blue,
                       alignment: FractionalOffset.bottomLeft,
                       child: Padding(
-                        padding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 7.0),
+                        padding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 5.0),
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           mainAxisAlignment: MainAxisAlignment.start,
                           children: [
                             Spacer(),
-                            Text(
-                              'Lase\'s Space',
-                              style: GoogleFonts.workSans(
-                                textStyle: TextStyle(color: Colors.white),
-                                fontSize: media.height * 0.022, // 23,
-                                fontWeight: FontWeight.w300,
+                            Expanded(
+                              flex: 0,
+                              child: Text(
+                                'Lase\'s Space',
+                                style: GoogleFonts.workSans(
+                                  textStyle: TextStyle(color: Colors.white),
+                                  fontSize: media.height * 0.022, // 23,
+                                  fontWeight: FontWeight.w300,
+                                ),
                               ),
                             ),
-                            yMargin5,
-                            Text(
-                              'Lukaku: King\nor Not?',
-                              style: GoogleFonts.workSans(
-                                textStyle: TextStyle(color: Colors.white),
-                                fontSize: media.height * 0.038, // 40,
-                                fontWeight: FontWeight.w600,
+                            // yMargin5,
+                            SizedBox(height: media.height * 0.005),
+                            Expanded(
+                              flex: 0,
+                              child: Text(
+                                'Lukaku: King\nor Not?',
+                                style: GoogleFonts.workSans(
+                                  textStyle: TextStyle(color: Colors.white),
+                                  fontSize: media.height * 0.034, // 40,
+                                  fontWeight: FontWeight.w600,
+                                ),
                               ),
                             ),
                           ],
@@ -297,6 +309,7 @@ class _ChatScreenState extends State<ChatScreen> {
                     padding: EdgeInsets.symmetric(horizontal: 10.0),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.start,
+                      // crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
                         SvgPicture.asset(
                           'assets/svg/smiley.svg',
@@ -375,7 +388,7 @@ class _ChatScreenState extends State<ChatScreen> {
           color: Colors.white,
         ),
         decoration: InputDecoration(
-          contentPadding: EdgeInsets.all(0),
+          // contentPadding: EdgeInsets.all(15),
           border: InputBorder.none,
           hintText: 'Leave a comment',
           hintStyle: GoogleFonts.workSans(

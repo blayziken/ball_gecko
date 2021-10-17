@@ -67,9 +67,13 @@ class _HomeState extends State<Home> {
                                 fontStyle: FontStyle.normal,
                               ),
                             ),
-                            yMargin5,
+                            // yMargin5,
+                            SizedBox(height: media.height * 0.005),
+
                             Center(child: Indicator()),
-                            yMargin10,
+                            // yMargin10,
+                            SizedBox(height: media.height * 0.010),
+
                             Expanded(
                               flex: 0,
                               child: Column(

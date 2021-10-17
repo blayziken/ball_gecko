@@ -25,7 +25,7 @@ class ChatPop extends StatelessWidget {
       flex: 0,
       child: Container(
         // color: Colors.teal,
-        height: media.height * 0.055, // 60,
+        height: media.height * 0.06, // 60,
         child: Padding(
           // padding: EdgeInsets.symmetric(horizontal: 0.0),
           padding: EdgeInsets.only(right: 10),
@@ -55,11 +55,12 @@ class ChatPop extends StatelessWidget {
                       fontStyle: FontStyle.normal,
                     ),
                   ),
-                  yMargin5,
+                  // yMargin5,
+                  SizedBox(height: media.height * 0.005),
                   Text(
                     message,
                     style: GoogleFonts.workSans(
-                      textStyle: TextStyle(color: Color(0XFF7f7f7f), letterSpacing: 1),
+                      textStyle: TextStyle(color: Color(0XFF7f7f7f)),
                       fontSize: media.height * 0.020,
                       fontWeight: FontWeight.w300,
                       fontStyle: FontStyle.normal,

@@ -34,30 +34,33 @@ class NavBarProfileImage extends StatelessWidget {
   Widget build(BuildContext context) {
     Size media = MediaQuery.of(context).size;
 
-    return CircleAvatar(
-      radius: media.height * 0.020, // 20,
-      backgroundColor: Colors.white,
-      child: Center(
-        child: CircleAvatar(
-          radius: media.height * 0.018, // 18,
-          backgroundColor: Colors.green,
-          backgroundImage: AssetImage(
-            'assets/images/Lase_1.png',
-          ),
-          child: Align(
-            alignment: Alignment.topRight,
-            child: Row(
-              children: [
-                Spacer(),
-                CircleAvatar(
-                  radius: media.height * 0.004, // 4,
-                  backgroundColor: Colors.red,
-                ),
-              ],
+    return InkWell(
+      child: CircleAvatar(
+        radius: media.height * 0.021, // 20,
+        backgroundColor: Colors.white,
+        child: Center(
+          child: CircleAvatar(
+            radius: media.height * 0.017, // 18,
+            backgroundColor: Colors.green,
+            backgroundImage: AssetImage(
+              'assets/images/Lase_1.png',
+            ),
+            child: Align(
+              alignment: Alignment.topRight,
+              child: Row(
+                children: [
+                  Spacer(),
+                  CircleAvatar(
+                    radius: media.height * 0.004, // 4,
+                    backgroundColor: Colors.red,
+                  ),
+                ],
+              ),
             ),
           ),
         ),
       ),
+      onTap: () => Navigator.pushNamed(context, '/chat-screen'),
     );
   }
 }
