@@ -35,7 +35,7 @@ class _ChatScreenState extends State<ChatScreen> {
                     right: 0,
                     left: 0,
                     child: Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 35.0),
+                      padding: EdgeInsets.symmetric(horizontal: 25.0),
                       child: Container(
                         // color: Colors.grey[300],
                         width: media.width,
@@ -52,7 +52,7 @@ class _ChatScreenState extends State<ChatScreen> {
                                 'TODAY 6:34 PM',
                                 style: TextStyle(
                                   color: Colors.red,
-                                  fontSize: 18,
+                                  fontSize: media.height * 0.015, // 15,
                                   fontWeight: FontWeight.w600,
                                   letterSpacing: 1,
                                 ),
@@ -74,7 +74,8 @@ class _ChatScreenState extends State<ChatScreen> {
                                         profileImage: 'assets/images/2nd_page/image6.png',
                                       ),
                                     ),
-                                    yMargin10,
+                                    // yMargin5,
+                                    SizedBox(height: media.height * 0.007),
                                     Align(
                                       alignment: Alignment.centerRight,
                                       child: MessageBubble(
@@ -82,9 +83,13 @@ class _ChatScreenState extends State<ChatScreen> {
                                         profileImage: 'assets/images/2nd_page/image3.png',
                                       ),
                                     ),
-                                    yMargin10,
+                                    // yMargin5,
+                                    SizedBox(height: media.height * 0.007),
+
                                     ImageUpload(),
-                                    yMargin10,
+                                    // yMargin5,
+                                    SizedBox(height: media.height * 0.007),
+
                                     Align(
                                       alignment: Alignment.centerRight,
                                       child: MessageBubble(
@@ -92,7 +97,9 @@ class _ChatScreenState extends State<ChatScreen> {
                                         profileImage: 'assets/images/2nd_page/image3.png',
                                       ),
                                     ),
-                                    yMargin10,
+                                    // yMargin5,
+                                    SizedBox(height: media.height * 0.007),
+
                                     Text(
                                       'Folake joined.',
                                       style: GoogleFonts.workSans(
@@ -100,16 +107,18 @@ class _ChatScreenState extends State<ChatScreen> {
                                           color: Color(0XFFED1C24),
                                           letterSpacing: .5,
                                         ),
-                                        fontSize: 20,
+                                        fontSize: media.height * 0.020, // 20,
                                         fontWeight: FontWeight.w500,
                                         fontStyle: FontStyle.normal,
                                       ),
                                     ),
-                                    yMargin7,
+                                    // yMargin5,
+                                    SizedBox(height: media.height * 0.007),
+
                                     Align(
                                       alignment: Alignment.centerLeft,
                                       child: MessageBubble(
-                                        message: 'Hello everyody! I\'m\nFolake',
+                                        message: 'Hello everybody! I\'m\nFolake',
                                         profileImage: 'assets/images/2nd_page/image4.png',
                                       ),
                                     ),
@@ -142,7 +151,7 @@ class _ChatScreenState extends State<ChatScreen> {
                               'Lase\'s Space',
                               style: GoogleFonts.workSans(
                                 textStyle: TextStyle(color: Colors.white),
-                                fontSize: 23,
+                                fontSize: media.height * 0.022, // 23,
                                 fontWeight: FontWeight.w300,
                               ),
                             ),
@@ -151,7 +160,7 @@ class _ChatScreenState extends State<ChatScreen> {
                               'Lukaku: King\nor Not?',
                               style: GoogleFonts.workSans(
                                 textStyle: TextStyle(color: Colors.white),
-                                fontSize: 40,
+                                fontSize: media.height * 0.038, // 40,
                                 fontWeight: FontWeight.w600,
                               ),
                             ),
@@ -195,7 +204,7 @@ class _ChatScreenState extends State<ChatScreen> {
                       height: media.height * 0.07,
                       color: Color(0XFF383838), // Colors.black,
                       child: Padding(
-                        padding: EdgeInsets.symmetric(horizontal: 0.0, vertical: 10.0),
+                        padding: EdgeInsets.symmetric(horizontal: 0.0, vertical: 7.0),
                         child: Row(
                           children: [
                             SvgPicture.asset(
@@ -218,9 +227,10 @@ class _ChatScreenState extends State<ChatScreen> {
                     child: Container(
                       height: media.height * 0.078,
                       decoration: BoxDecoration(
+                        // color: Colors.blue,
                         image: DecorationImage(
                           image: AssetImage('assets/images/crate_drawer-removebg-preview.png'),
-                          fit: BoxFit.cover,
+                          fit: BoxFit.fill,
                         ),
                       ),
                       child: Padding(
@@ -229,8 +239,8 @@ class _ChatScreenState extends State<ChatScreen> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Container(
-                              height: media.height * 0.03, //30,
-                              width: media.height * 0.03, //30,
+                              height: media.height * 0.025, //30,
+                              width: media.height * 0.025, //30,
                               decoration: BoxDecoration(
                                 color: Colors.grey,
                                 borderRadius: BorderRadius.circular(100),
@@ -248,19 +258,19 @@ class _ChatScreenState extends State<ChatScreen> {
                             xMargin5,
                             Text(
                               '5.1k',
-                              style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 20),
+                              style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: media.height * 0.02),
                             ),
                             xMargin10,
                             Image.asset(
                               'assets/images/bg_gems.png',
-                              height: media.height * 0.03, //30,
-                              width: media.height * 0.03, //30,
+                              height: media.height * 0.02, //30,
+                              width: media.height * 0.02, //30,
                               fit: BoxFit.cover,
                             ),
                             xMargin5,
                             Text(
                               '1.2k',
-                              style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 20),
+                              style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: media.height * 0.02),
                             ),
                           ],
                         ),
@@ -277,7 +287,7 @@ class _ChatScreenState extends State<ChatScreen> {
               child: Padding(
                 padding: EdgeInsets.symmetric(horizontal: 25.0),
                 child: Container(
-                  height: 50,
+                  height: media.height * 0.045, // 45,
                   width: double.infinity,
                   decoration: BoxDecoration(
                     color: Color(0XFF252836),
@@ -297,11 +307,11 @@ class _ChatScreenState extends State<ChatScreen> {
                         ),
                         xMargin5,
                         _sendMessageTextField(),
-                        Icon(Icons.photo_camera, size: 35, color: Color(0XFF808191)),
+                        Icon(Icons.photo_camera, size: media.height * 0.035, color: Color(0XFF808191)),
                         xMargin5,
                         Container(
-                          height: 35,
-                          width: 35,
+                          height: media.height * 0.035, // 35
+                          width: media.height * 0.035, // 35
                           decoration: BoxDecoration(
                             color: Colors.red,
                             borderRadius: BorderRadius.circular(50),

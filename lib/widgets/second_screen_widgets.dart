@@ -12,42 +12,44 @@ class RowImages extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Size media = MediaQuery.of(context).size;
+
     return Row(
       crossAxisAlignment: CrossAxisAlignment.center,
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         CircleAvatar(
-          radius: 25,
+          radius: media.height * 0.025, // 25,
           backgroundColor: Colors.grey,
           backgroundImage: AssetImage('assets/images/Brandon.png'), // image3
         ),
         CircleAvatar(
-          radius: 25,
+          radius: media.height * 0.025, // 25,
           backgroundColor: Colors.grey,
           backgroundImage: AssetImage('assets/images/2nd_page/image6.png'),
         ),
         CircleAvatar(
-          radius: 25,
+          radius: media.height * 0.025, // 25,
           backgroundColor: Colors.grey,
           backgroundImage: AssetImage('assets/images/2nd_page/image1.png'),
         ),
         CircleAvatar(
-          radius: 25,
+          radius: media.height * 0.025, // 25,
           backgroundColor: Colors.grey,
           backgroundImage: AssetImage('assets/images/2nd_page/image2.png'),
         ),
         CircleAvatar(
-          radius: 25,
+          radius: media.height * 0.025, // 25,
           backgroundColor: Colors.grey,
           backgroundImage: AssetImage('assets/images/2nd_page/image3.png'),
         ),
         CircleAvatar(
-          radius: 25,
+          radius: media.height * 0.025, // 25,
           backgroundColor: Colors.grey,
           backgroundImage: AssetImage('assets/images/2nd_page/image5.png'),
         ),
         CircleAvatar(
-          radius: 25,
+          radius: media.height * 0.025, // 25,
           backgroundColor: Colors.grey,
           backgroundImage: AssetImage('assets/images/2nd_page/image4.png'),
         ),
@@ -79,7 +81,7 @@ class InviteSomeone extends StatelessWidget {
             ),
             Positioned(
               top: media.height * (0.07 / 4),
-              left: 15,
+              left: media.height * 0.015,
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -95,7 +97,7 @@ class InviteSomeone extends StatelessWidget {
                       Icon(
                         Icons.add,
                         color: Colors.white,
-                        size: 15,
+                        size: media.height * 0.013, // 15,
                       ),
                       // Spacer(),
                     ],
@@ -110,7 +112,7 @@ class InviteSomeone extends StatelessWidget {
           'invite\nsomeone',
           style: GoogleFonts.workSans(
             textStyle: TextStyle(color: Color(0XFF7f7f7f)),
-            fontSize: 19,
+            fontSize: media.height * 0.019,
             fontWeight: FontWeight.w600,
             fontStyle: FontStyle.normal,
           ),
@@ -142,19 +144,23 @@ class MessageBubble extends StatelessWidget {
             child: Padding(
               padding: EdgeInsets.only(right: 8.0),
               child: Container(
-                height: 55,
+                height: media.height * 0.050, // 55,
                 width: media.width / 1.5, // 350,
                 decoration: BoxDecoration(
                   color: Color(0XFF373E4E),
                   borderRadius: BorderRadius.circular(100),
                 ),
                 child: Padding(
-                  padding: EdgeInsets.only(left: 15.0, right: 35),
+                  padding: EdgeInsets.only(left: 15.0, right: 30),
                   child: Align(
                     alignment: Alignment.centerLeft,
                     child: Text(
                       message,
-                      style: TextStyle(color: Colors.white, fontSize: 17, letterSpacing: 2),
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: media.height * 0.016, //17,
+                        letterSpacing: 1,
+                      ),
                     ),
                   ),
                 ),
@@ -167,10 +173,10 @@ class MessageBubble extends StatelessWidget {
             right: 0,
             bottom: 0,
             child: CircleAvatar(
-              radius: 16,
+              radius: media.height * 0.016, // 16,
               backgroundColor: Colors.white,
               child: CircleAvatar(
-                radius: 15,
+                radius: media.height * 0.015, // 15,
                 backgroundColor: Colors.white,
                 backgroundImage: AssetImage(profileImage),
               ),
@@ -189,33 +195,39 @@ class ImageUpload extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Size media = MediaQuery.of(context).size;
+
     return Row(
       children: [
         Spacer(),
         Icon(
           Icons.cancel_rounded,
           color: Color(0XFFF18303),
-          size: 30,
+          size: media.height * 0.03, // 30,
         ),
-        xMargin20,
+        // xMargin10,
+        SizedBox(width: media.height * 0.01),
         Icon(
           Icons.arrow_downward_rounded,
           color: Colors.black,
-          size: 25,
+          size: media.height * 0.025, // 25,
         ),
-        xMargin15,
-        Container(
-          height: 125,
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(30),
-            color: Colors.purple,
-          ),
-          child: Image.asset(
-            'assets/images/2nd_page/image_lukaku.png',
-            fit: BoxFit.cover,
+        // xMargin5,
+        SizedBox(width: media.height * 0.001),
+
+        Expanded(
+          child: Container(
+            height: media.height * 0.120, // 125,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(30),
+              color: Colors.purple,
+            ),
+            child: Image.asset(
+              'assets/images/2nd_page/image_lukaku.png',
+              fit: BoxFit.cover,
+            ),
           ),
         ),
-        yMargin10,
       ],
     );
   }

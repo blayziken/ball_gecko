@@ -31,7 +31,7 @@ class _HomeState extends State<Home> {
                 children: [
                   // Active Spaces + Recent
                   Positioned(
-                    top: media.height * 0.26,
+                    top: media.height * 0.25,
                     right: 0,
                     left: 0,
                     child: Padding(
@@ -47,28 +47,34 @@ class _HomeState extends State<Home> {
                               'Active Spaces',
                               style: GoogleFonts.workSans(
                                 textStyle: TextStyle(color: Color(0XFF7f7f7f), letterSpacing: 1),
-                                fontSize: 35,
+                                fontSize: media.height * 0.035, // 35,
                                 fontWeight: FontWeight.w600,
                                 fontStyle: FontStyle.normal,
                               ),
                             ),
-                            yMargin20,
+                            SizedBox(height: media.height * 0.013),
+                            // yMargin15,
                             SpacesBuild(),
-                            yMargin20,
+                            // yMargin15,
+                            SizedBox(height: media.height * 0.013),
+
                             Text(
                               'Recent',
                               style: GoogleFonts.workSans(
                                 textStyle: TextStyle(color: Color(0XFF7f7f7f), letterSpacing: 1),
-                                fontSize: 35,
+                                fontSize: media.height * 0.035, // 35,
                                 fontWeight: FontWeight.w600,
                                 fontStyle: FontStyle.normal,
                               ),
                             ),
-                            yMargin10,
+                            yMargin5,
                             Center(child: Indicator()),
-                            yMargin20,
-                            Column(
-                              children: chatMessages,
+                            yMargin10,
+                            Expanded(
+                              flex: 0,
+                              child: Column(
+                                children: chatMessages,
+                              ),
                             ),
                           ],
                         ),
@@ -95,7 +101,7 @@ class _HomeState extends State<Home> {
                               'Chat with friends in',
                               style: GoogleFonts.workSans(
                                 textStyle: TextStyle(color: Colors.white),
-                                fontSize: 25,
+                                fontSize: media.height * 0.025, // 25,
                                 fontWeight: FontWeight.w400,
                               ),
                             ),
@@ -104,7 +110,7 @@ class _HomeState extends State<Home> {
                               'Spaces',
                               style: GoogleFonts.workSans(
                                 textStyle: TextStyle(color: Colors.white),
-                                fontSize: 45,
+                                fontSize: media.height * 0.045, // 45,
                                 fontWeight: FontWeight.w600,
                               ),
                             ),
@@ -148,7 +154,7 @@ class _HomeState extends State<Home> {
                       height: media.height * 0.07,
                       color: Color(0XFF383838), // Colors.black,
                       child: Padding(
-                        padding: EdgeInsets.symmetric(horizontal: 0.0, vertical: 10.0),
+                        padding: EdgeInsets.symmetric(horizontal: 0.0, vertical: 7.0),
                         child: Row(
                           children: [
                             SvgPicture.asset(
@@ -171,9 +177,10 @@ class _HomeState extends State<Home> {
                     child: Container(
                       height: media.height * 0.078,
                       decoration: BoxDecoration(
+                        // color: Colors.blue,
                         image: DecorationImage(
                           image: AssetImage('assets/images/crate_drawer-removebg-preview.png'),
-                          fit: BoxFit.cover,
+                          fit: BoxFit.fill,
                         ),
                       ),
                       child: Padding(
@@ -182,8 +189,8 @@ class _HomeState extends State<Home> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Container(
-                              height: media.height * 0.03, //30,
-                              width: media.height * 0.03, //30,
+                              height: media.height * 0.025, //30,
+                              width: media.height * 0.025, //30,
                               decoration: BoxDecoration(
                                 color: Colors.grey,
                                 borderRadius: BorderRadius.circular(100),
@@ -201,19 +208,19 @@ class _HomeState extends State<Home> {
                             xMargin5,
                             Text(
                               '5.1k',
-                              style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 20),
+                              style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: media.height * 0.02),
                             ),
                             xMargin10,
                             Image.asset(
                               'assets/images/bg_gems.png',
-                              height: media.height * 0.03, //30,
-                              width: media.height * 0.03, //30,
+                              height: media.height * 0.02, //30,
+                              width: media.height * 0.02, //30,
                               fit: BoxFit.cover,
                             ),
                             xMargin5,
                             Text(
                               '1.2k',
-                              style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 20),
+                              style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: media.height * 0.02),
                             ),
                           ],
                         ),
@@ -259,21 +266,21 @@ class _HomeState extends State<Home> {
       message: 'Hello everybody! I\'m Folake.',
       time: '08:43',
     ),
-    yMargin20,
+    yMargin15,
     ChatPop(
       name: 'Brandon',
       image: 'assets/images/Brandon.png',
       message: 'Will do, super thank you 😃♥',
       time: 'Tue',
     ),
-    yMargin20,
+    yMargin15,
     ChatPop(
       name: 'Solape',
       image: 'assets/images/Solape.png',
       message: 'Uploaded a picture',
       time: 'Sun',
     ),
-    yMargin20,
+    yMargin15,
     ChatPop(
       name: 'Marcel',
       image: 'assets/images/marcel.png',

@@ -7,7 +7,7 @@ class SpacesBuild extends StatelessWidget {
     Size media = MediaQuery.of(context).size;
     return Container(
       // color: Colors.brown,
-      height: media.height * 0.18, // 190,
+      height: media.height * 0.19, // 190,
       child: ListView.builder(
         scrollDirection: Axis.horizontal,
         itemBuilder: (context, index) {
@@ -15,10 +15,10 @@ class SpacesBuild extends StatelessWidget {
             padding: EdgeInsets.only(right: 16.0),
             child: Container(
               // height: 150,
-              width: media.width / 3.7, // 140,
+              width: media.height * 0.14, // media.width / 3.7, // 140,
               decoration: BoxDecoration(
                 // color: Colors.red,
-                borderRadius: BorderRadius.circular(40),
+                borderRadius: BorderRadius.circular(30),
                 image: DecorationImage(
                   image: AssetImage(
                     '${users[index].image}',
@@ -37,13 +37,13 @@ class SpacesBuild extends StatelessWidget {
                       child: Align(
                         alignment: Alignment.topRight,
                         child: Container(
-                          height: 13,
-                          width: 13,
+                          height: media.height * 0.013, // 13,
+                          width: media.height * 0.013,
                           color: Colors.white,
                           child: Center(
                             child: Container(
-                              height: 10,
-                              width: 10,
+                              height: media.height * 0.012,
+                              width: media.height * 0.012,
                               color: Color(0XFF52EF7C), //Colors.green,
                             ),
                           ),
@@ -54,9 +54,10 @@ class SpacesBuild extends StatelessWidget {
                     Text(
                       '${users[index].name}\'s\nSpace',
                       style: TextStyle(
-                        fontSize: 22,
+                        fontSize: media.height * 0.020, // 35,
                         color: Colors.white,
                         fontWeight: FontWeight.bold,
+                        letterSpacing: 1,
                       ),
                     ),
                   ],

@@ -32,12 +32,14 @@ class NavBarProfileImage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Size media = MediaQuery.of(context).size;
+
     return CircleAvatar(
-      radius: 20,
+      radius: media.height * 0.020, // 20,
       backgroundColor: Colors.white,
       child: Center(
         child: CircleAvatar(
-          radius: 18,
+          radius: media.height * 0.018, // 18,
           backgroundColor: Colors.green,
           backgroundImage: AssetImage(
             'assets/images/Lase_1.png',
@@ -48,7 +50,7 @@ class NavBarProfileImage extends StatelessWidget {
               children: [
                 Spacer(),
                 CircleAvatar(
-                  radius: 4,
+                  radius: media.height * 0.004, // 4,
                   backgroundColor: Colors.red,
                 ),
               ],

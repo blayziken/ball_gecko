@@ -21,60 +21,64 @@ class ChatPop extends StatelessWidget {
   Widget build(BuildContext context) {
     Size media = MediaQuery.of(context).size;
 
-    return Container(
-      // color: Colors.teal,
-      height: media.height * 0.055, // 60,
-      child: Padding(
-        // padding: EdgeInsets.symmetric(horizontal: 0.0),
-        padding: EdgeInsets.only(right: 10),
-        child: Row(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            CircleAvatar(
-              radius: 30,
-              // backgroundColor: Colors.red,
-              backgroundImage: AssetImage(
-                image,
-              ),
-            ),
-            xMargin15,
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text(
-                  name,
-                  style: GoogleFonts.workSans(
-                    textStyle: TextStyle(color: Color(0XFF7f7f7f), letterSpacing: 1),
-                    fontSize: 25,
-                    fontWeight: FontWeight.w400,
-                    fontStyle: FontStyle.normal,
-                  ),
+    return Expanded(
+      flex: 0,
+      child: Container(
+        // color: Colors.teal,
+        height: media.height * 0.055, // 60,
+        child: Padding(
+          // padding: EdgeInsets.symmetric(horizontal: 0.0),
+          padding: EdgeInsets.only(right: 10),
+          child: Row(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              CircleAvatar(
+                radius: 30,
+                // backgroundColor: Colors.red,
+                backgroundImage: AssetImage(
+                  image,
                 ),
-                yMargin5,
-                Text(
-                  message,
-                  style: GoogleFonts.workSans(
-                    textStyle: TextStyle(color: Color(0XFF7f7f7f), letterSpacing: 1),
-                    fontSize: 22,
-                    fontWeight: FontWeight.w300,
-                    fontStyle: FontStyle.normal,
-                  ),
-                ),
-              ],
-            ),
-            Spacer(),
-            Text(
-              time,
-              style: GoogleFonts.workSans(
-                textStyle: TextStyle(color: Color(0XFF7f7f7f)),
-                fontSize: 25,
-                fontWeight: FontWeight.w400,
-                fontStyle: FontStyle.normal,
               ),
-            ),
-          ],
+              // xMargin10,
+              SizedBox(width: media.height * 0.010),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    name,
+                    style: GoogleFonts.workSans(
+                      textStyle: TextStyle(color: Color(0XFF7f7f7f), letterSpacing: 1),
+                      fontSize: media.height * 0.025, // 25,
+                      fontWeight: FontWeight.w400,
+                      fontStyle: FontStyle.normal,
+                    ),
+                  ),
+                  yMargin5,
+                  Text(
+                    message,
+                    style: GoogleFonts.workSans(
+                      textStyle: TextStyle(color: Color(0XFF7f7f7f), letterSpacing: 1),
+                      fontSize: media.height * 0.020,
+                      fontWeight: FontWeight.w300,
+                      fontStyle: FontStyle.normal,
+                    ),
+                  ),
+                ],
+              ),
+              Spacer(),
+              Text(
+                time,
+                style: GoogleFonts.workSans(
+                  textStyle: TextStyle(color: Color(0XFF7f7f7f)),
+                  fontSize: media.height * 0.025, // 25,
+                  fontWeight: FontWeight.w400,
+                  fontStyle: FontStyle.normal,
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );

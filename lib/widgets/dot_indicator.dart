@@ -8,13 +8,15 @@ class Indicator extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Size media = MediaQuery.of(context).size;
+
     return DotsIndicator(
-      dotsCount: 14,
+      dotsCount: 10,
       decorator: DotsDecorator(
         color: Colors.redAccent,
-        size: Size.square(4),
+        size: Size.square(media.height * 0.004),
         activeColor: Colors.red,
-        activeSize: Size.square(7),
+        activeSize: Size.square(media.height * 0.006),
         spacing: EdgeInsets.all(7),
       ),
     );
