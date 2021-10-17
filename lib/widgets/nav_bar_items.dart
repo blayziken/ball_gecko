@@ -9,15 +9,18 @@ class NavBarItem extends StatelessWidget {
   Widget build(BuildContext context) {
     Size media = MediaQuery.of(context).size;
 
-    return Container(
-      height: media.height * 0.035,
-      width: media.height * 0.035,
-      // color: Colors.green,
-      child: SvgPicture.asset(
-        icon,
-        color: Colors.white70,
-        fit: BoxFit.contain,
+    return InkWell(
+      child: Container(
+        height: media.height * 0.035,
+        width: media.height * 0.035,
+        // color: Colors.green,
+        child: SvgPicture.asset(
+          icon,
+          color: Colors.white70,
+          fit: BoxFit.contain,
+        ),
       ),
+      onTap: () => Navigator.pushNamed(context, '/chat-screen'),
     );
   }
 }

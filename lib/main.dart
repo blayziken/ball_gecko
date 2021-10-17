@@ -17,7 +17,11 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: ChatScreen(),
+      initialRoute: '/',
+      routes: {
+        '/': (context) => Home(),
+        '/chat-screen': (context) => ChatScreen(),
+      },
     );
   }
 }
